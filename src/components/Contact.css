@@ -1,0 +1,184 @@
+.contact__shell {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* ------------------------------------------------------------- aside -- */
+
+.contact__heading {
+  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
+  margin-bottom: 1rem;
+}
+
+.contact__lead {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 42ch;
+  margin-bottom: 2rem;
+}
+
+.contact__cards {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact__card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.95rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: transform 0.28s var(--ease), border-color 0.28s var(--ease),
+    box-shadow 0.28s var(--ease);
+}
+
+a.contact__card:hover {
+  transform: translateX(5px);
+  border-color: var(--accent-ring);
+  box-shadow: var(--shadow-md);
+}
+
+.contact__card-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--accent-tint);
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: background-color 0.28s var(--ease), color 0.28s var(--ease);
+}
+
+a.contact__card:hover .contact__card-icon {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.contact__card-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contact__card-text small {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.contact__card-text strong {
+  font-size: 0.92rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact__card-go {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease);
+}
+
+a.contact__card:hover .contact__card-go {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.contact__socials a {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  transition: all 0.28s var(--ease);
+}
+
+.contact__socials a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: translateY(-4px);
+}
+
+/* -------------------------------------------------------------- form -- */
+
+.contact__form-wrap {
+  padding: clamp(1.5rem, 3vw, 2.2rem);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact__form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--text);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-size: 0.94rem;
+  color: var(--text);
+  resize: vertical;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease),
+    background-color 0.25s var(--ease);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  background: var(--surface);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+.contact__submit {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 880px) {
+  .contact__shell {
+    grid-template-columns: 1fr;
+  }
+}

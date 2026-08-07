@@ -1,12 +1,50 @@
-# React + Vite
+# Muhammad Hassaan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for a Flutter / MERN stack developer. Built with React 19 + Vite,
+plain CSS (no UI framework), and Font Awesome for icons.
 
-Currently, two official plugins are available:
+## Running it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # production build to dist/
+npm run preview  # serve the built output
+npm run lint
+```
 
-## Expanding the ESLint configuration
+## Editing the content
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**All copy lives in [`src/data/content.js`](src/data/content.js)** — profile, stats, services,
+experience, projects, skills, education, certifications and nav links. Adding a project means
+adding one object to the `projects` array; the filter counts update on their own.
+
+Each project's `categories` array drives the filter chips, which are defined in `projectFilters`.
+
+## Structure
+
+```
+src/
+  data/content.js       all site copy
+  hooks/
+    useScrollSpy.js     highlights the nav link for the section in view
+    useTheme.js         light/dark preference, persisted to localStorage
+  components/           one .jsx + .css per section
+  index.css             design tokens, reset, shared primitives
+public/                 favicon
+```
+
+## Theming
+
+Colors, spacing, radii, fonts and shadows are CSS custom properties on `:root` in
+`src/index.css`. The dark theme is an override block under `[data-theme='dark']` — change the
+accent in both places and the whole site follows.
+
+A small inline script in `index.html` applies the stored theme before first paint so there is
+no flash of the wrong theme.
+
+## Deployment
+
+`vite.config.js` sets `base` to `/hassaan-portfolio` for GitHub Pages, overridable with the
+`VITE_BASE_PATH` env var. Note that it has no trailing slash — anything in `public/` referenced
+by hand from JS needs `import.meta.env.BASE_URL` joined with an explicit `/`.

@@ -1,0 +1,88 @@
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.25rem;
+}
+
+.service {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.6rem 1.6rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease), opacity 0.7s var(--ease);
+}
+
+/* Accent wash that slides up on hover. */
+.service::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 0;
+  background: linear-gradient(180deg, transparent, var(--accent-tint));
+  transition: height 0.4s var(--ease);
+  z-index: 0;
+}
+
+.service:hover::before {
+  height: 100%;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-ring);
+  box-shadow: var(--shadow-lg);
+}
+
+.service > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service__num {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+}
+
+.service__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 1.25rem;
+  border-radius: 15px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-accent);
+  transition: transform 0.4s var(--ease), border-radius 0.4s var(--ease);
+}
+
+.service:hover .service__icon {
+  transform: rotate(-8deg) scale(1.06);
+  border-radius: 50%;
+}
+
+.service__title {
+  font-size: 1.12rem;
+  margin-bottom: 0.7rem;
+}
+
+.service__body {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 1.3rem;
+}
+
+.service__tags {
+  margin-top: auto;
+}

@@ -1,0 +1,228 @@
+/* ----------------------------------------------------------- filters -- */
+
+.projects__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.projects__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.05rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.28s var(--ease);
+}
+
+.projects__filter:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.projects__filter.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  box-shadow: var(--shadow-accent);
+}
+
+.projects__count {
+  padding: 0.05rem 0.42rem;
+  border-radius: 100px;
+  background: var(--surface-2);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-faint);
+}
+
+.projects__filter.is-active .projects__count {
+  background: rgba(255, 255, 255, 0.22);
+  color: var(--on-accent);
+}
+
+/* -------------------------------------------------------------- grid -- */
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.4rem;
+  align-items: start;
+}
+
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.7rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  animation: card-in 0.5s var(--ease) both;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Accent hairline that draws across the top on hover. */
+.project::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto auto 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  transition: width 0.45s var(--ease);
+}
+
+.project:hover::after {
+  width: 100%;
+}
+
+.project:hover {
+  transform: translateY(-7px);
+  border-color: var(--accent-ring);
+  box-shadow: var(--shadow-lg);
+}
+
+.project--featured {
+  background: linear-gradient(180deg, var(--accent-tint) 0%, var(--surface) 42%);
+}
+
+/* --------------------------------------------------------------- top -- */
+
+.project__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.15rem;
+}
+
+.project__icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 1.1rem;
+  transition: transform 0.4s var(--ease), background-color 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+
+.project:hover .project__icon {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  transform: translateY(-3px) rotate(-6deg);
+}
+
+.project__flags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.project__flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.project__flag--star {
+  border-color: var(--accent-ring);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* -------------------------------------------------------------- body -- */
+
+.project__title {
+  font-size: 1.18rem;
+  margin-bottom: 0.35rem;
+}
+
+.project__org {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-faint);
+  margin-bottom: 0.9rem;
+}
+
+.project__dot {
+  color: var(--accent);
+  margin-inline: 0.2rem;
+}
+
+.project__summary {
+  font-size: 0.93rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.project__points {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1.3rem;
+}
+
+.project__points li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.project__points li::before {
+  content: '\f105'; /* chevron-right */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.project__stack {
+  margin-top: auto;
+}
+
+@media (max-width: 480px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project {
+    padding: 1.35rem;
+  }
+}
