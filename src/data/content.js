@@ -4,7 +4,7 @@
 export const profile = {
   name: 'Muhammad Hassaan',
   firstName: 'Hassaan',
-  roles: ['Full Stack Engineer', 'React.js, Next.js, TypeScript', 'Flutter Developer'],
+  roles: ['Full Stack Engineer', 'Mobile & Web Apps'],
   headline: 'I build cross-platform apps people actually keep on their home screen.',
   location: 'Islamabad, Pakistan',
   email: 'hassaanatif5@gmail.com',
