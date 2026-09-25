@@ -32,7 +32,7 @@ export const stats = [
   { value: '10+', label: 'Apps shipped to production' },
   { value: '10+', label: 'Live on the Apple App Store' },
   { value: '2+', label: 'Years building with Flutter' },
-  { value: '20+', label: 'Full projects delivered' },
+  { value: '2+', label: 'Years building with React.js & Next.js' },
 ];
 
 export const services = [
