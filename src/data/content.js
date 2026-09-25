@@ -244,6 +244,7 @@ export const skillGroups = [
     icon: 'fas fa-laptop-code',
     skills: [
       { name: 'React.js', icon: 'fab fa-react' },
+      { name: 'Next.js', icon: 'fab fa-js' },
       { name: 'Node.js', icon: 'fab fa-node-js' },
       { name: 'Express.js', icon: 'fas fa-server' },
       { name: 'TypeScript', icon: 'fab fa-typescript'},
