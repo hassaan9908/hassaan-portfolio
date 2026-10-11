@@ -4,8 +4,8 @@
 export const profile = {
   name: 'Muhammad Hassaan',
   firstName: 'Hassaan',
-  roles: ['Full Stack Engineer', 'Mobile & Web Apps'],
-  headline: 'I build cross-platform apps people actually keep on their home screen.',
+  roles: ['Full Stack Engineer', 'Next.js / MERN / Flutter'],
+  headline: 'I build full-stack web products with clean front ends, reliable APIs, and production-ready backends.',
   location: 'Islamabad, Pakistan',
   email: 'hassaanatif5@gmail.com',
   phone: '+92 310 5259908',
@@ -13,8 +13,8 @@ export const profile = {
   available: true,
   availabilityNote: 'Available for new opportunities',
   bio: [
-    'I’m a developer who works across mobile and web — shipping production Flutter apps to the Apple App Store, and building full-stack products on the MERN stack.',
-    'Most of my day-to-day is turning Figma files into pixel-perfect, responsive interfaces, wiring them to REST APIs, and keeping the state layer clean with GetX or BLoC. I’ve also shipped the unglamorous parts that make apps real: in-app purchases, StoreKit, ad monetization, and Firebase-backed configuration.',
+    'I’m a developer who builds full-stack products first — shipping Next.js, MERN, and Supabase apps with authentication, dashboards, workflows, and clean deployment pipelines.',
+    'I still build mobile apps, but my strongest work is in turning Figma files into responsive interfaces, wiring them to REST APIs, and keeping the data and state layers clean with PostgreSQL, MongoDB, and Firebase-backed services.',
   ],
   socials: [
     {
@@ -30,23 +30,23 @@ export const profile = {
 
 export const stats = [
   { value: '10+', label: 'Apps shipped to production' },
-  { value: '10+', label: 'Live on the Apple App Store' },
-  { value: '2+', label: 'Years building with Flutter' },
+  { value: '6+', label: 'Full-stack web apps shipped' },
   { value: '2+', label: 'Years building with React.js & Next.js' },
+  { value: '2+', label: 'Years building with Node.js & Express' },
 ];
 
 export const services = [
   {
-    icon: 'fas fa-mobile-screen-button',
-    title: 'Cross-Platform Mobile Apps',
-    body: 'One Flutter codebase, two polished native apps. From Figma handoff to a signed build on the App Store — including release, review, and post-launch maintenance.',
-    tags: ['Flutter', 'Dart', 'iOS + Android'],
-  },
-  {
     icon: 'fas fa-layer-group',
     title: 'Full-Stack Web Development',
-    body: 'End-to-end MERN builds — MongoDB schema design, Express REST APIs, and React front ends that stay fast and readable as the product grows.',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    body: 'End-to-end web builds — Next.js front ends, Node.js and Express APIs, MongoDB or PostgreSQL data models, authentication, dashboards, and deployment.',
+    tags: ['Next.js', 'TypeScript', 'Node.js'],
+  },
+  {
+    icon: 'fas fa-mobile-screen-button',
+    title: 'Cross-Platform Mobile Apps',
+    body: 'Flutter apps when mobile is the right tool — responsive UI, REST integrations, App Store deployment, and the release plumbing behind real products.',
+    tags: ['Flutter', 'Dart', 'iOS + Android'],
   },
   {
     icon: 'fas fa-wand-magic-sparkles',
@@ -105,6 +105,57 @@ export const experience = [
 export const projectFilters = ['All', 'Mobile', 'Web', 'AI'];
 
 export const projects = [
+  {
+    title: 'LeadFlow CRM',
+    org: 'Personal Project',
+    period: 'Oct 2026',
+    categories: ['Web'],
+    featured: true,
+    icon: 'fas fa-clipboard-list',
+    website: 'https://leadflow-crm-black.vercel.app',
+    summary:
+      'A multi-tenant sales CRM built for lead management, deals, team workspaces, and pipeline visibility.',
+    points: [
+      'Built with Next.js, TypeScript, Supabase, PostgreSQL, and Tailwind CSS for a production-ready SaaS workflow.',
+      'Implemented drag-and-drop pipelines, analytics dashboards, workspace switching, invitations, and role-based access control.',
+      'Added auth through Supabase, PostgreSQL RLS policies, Zod validation, server actions, and Vercel deployment.',
+    ],
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS'],
+  },
+  {
+    title: 'TeamSpace',
+    org: 'Personal Project',
+    period: 'Oct 2026',
+    categories: ['Web'],
+    featured: true,
+    icon: 'fas fa-comments',
+    website: 'https://teamspace-kohl.vercel.app',
+    summary:
+      'A real-time collaboration platform for channels, direct messages, task boards, and workspace communication.',
+    points: [
+      'Built with React, Node.js, Express, MongoDB, and Socket.IO for real-time workspace collaboration.',
+      'Implemented JWT authentication, RBAC, private channels, one-to-one messaging, and unread activity tracking.',
+      'Added Cloudinary file sharing, workspace search, Kanban task management, and deployment across Vercel, Render, and MongoDB Atlas.',
+    ],
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Socket.IO'],
+  },
+  {
+    title: 'TechSphere',
+    org: 'Personal Project',
+    period: 'Oct 2026',
+    categories: ['Web'],
+    featured: true,
+    icon: 'fas fa-store',
+    website: 'https://techsphere-mu.vercel.app',
+    summary:
+      'A full-stack electronics e-commerce platform with search, cart, checkout, orders, and admin inventory controls.',
+    points: [
+      'Built with Next.js, TypeScript, MongoDB, Mongoose, and Tailwind CSS for product discovery and checkout flows.',
+      'Implemented HTTP-only cookie auth, protected routes, admin authorization, and server-side pricing validation.',
+      'Added transactional order handling, inventory restoration, SEO metadata, Storybook components, and Playwright E2E testing.',
+    ],
+    stack: ['Next.js', 'TypeScript', 'MongoDB', 'Mongoose', 'Tailwind CSS'],
+  },
   {
     title: 'AI Ringtone App',
     org: 'Essenceware Technologies',
@@ -227,27 +278,15 @@ export const projects = [
 
 export const skillGroups = [
   {
-    title: 'Mobile Development',
-    icon: 'fas fa-mobile-screen-button',
-    skills: [
-      { name: 'Flutter', icon: 'fab fa-flutter' },
-      { name: 'Dart', icon: 'fas fa-code' },
-      { name: 'GetX', icon: 'fas fa-bolt' },
-      { name: 'BLoC', icon: 'fas fa-diagram-project' },
-      { name: 'StoreKit', icon: 'fab fa-apple' },
-      { name: 'In-App Purchases', icon: 'fas fa-cart-shopping' },
-      { name: 'Google Mobile Ads', icon: 'fab fa-google' },
-    ],
-  },
-  {
     title: 'Web Development',
     icon: 'fas fa-laptop-code',
     skills: [
-      { name: 'React.js', icon: 'fab fa-react' },
       { name: 'Next.js', icon: 'fab fa-js' },
+      { name: 'React.js', icon: 'fab fa-react' },
       { name: 'Node.js', icon: 'fab fa-node-js' },
       { name: 'Express.js', icon: 'fas fa-server' },
-      { name: 'TypeScript', icon: 'fab fa-typescript'},
+      { name: 'TypeScript', icon: 'fab fa-typescript' },
+      { name: 'Tailwind CSS', icon: 'fas fa-wind' },
       { name: 'JavaScript', icon: 'fab fa-js' },
       { name: 'HTML5', icon: 'fab fa-html5' },
       { name: 'CSS3', icon: 'fab fa-css3-alt' },
@@ -259,6 +298,7 @@ export const skillGroups = [
     icon: 'fas fa-database',
     skills: [
       { name: 'MongoDB', icon: 'fas fa-leaf' },
+      { name: 'PostgreSQL', icon: 'fas fa-database' },
       { name: 'Firebase', icon: 'fas fa-fire' },
       { name: 'Supabase', icon: 'fas fa-bolt-lightning' },
       { name: 'SQLite', icon: 'fas fa-database' },
@@ -276,12 +316,25 @@ export const skillGroups = [
       { name: 'CI/CD', icon: 'fas fa-arrows-rotate' },
     ],
   },
+  {
+    title: 'Mobile Development',
+    icon: 'fas fa-mobile-screen-button',
+    skills: [
+      { name: 'Flutter', icon: 'fab fa-flutter' },
+      { name: 'Dart', icon: 'fas fa-code' },
+      { name: 'GetX', icon: 'fas fa-bolt' },
+      { name: 'BLoC', icon: 'fas fa-diagram-project' },
+      { name: 'StoreKit', icon: 'fab fa-apple' },
+      { name: 'In-App Purchases', icon: 'fas fa-cart-shopping' },
+      { name: 'Google Mobile Ads', icon: 'fab fa-google' },
+    ],
+  },
 ];
 
 export const marqueeItems = [
-  'Flutter', 'Dart', 'React.js', 'Node.js', 'Express', 'MongoDB',
-  'Firebase', 'GetX', 'BLoC', 'REST APIs', 'OpenAI', 'Supabase',
-  'StoreKit', 'FastAPI', 'Git', 'CI/CD',
+  'Next.js', 'TypeScript', 'React.js', 'Node.js', 'Express', 'MongoDB',
+  'Supabase', 'PostgreSQL', 'REST APIs', 'Tailwind CSS', 'Git', 'CI/CD',
+  'Flutter', 'Dart', 'Firebase', 'OpenAI',
 ];
 
 export const education = [

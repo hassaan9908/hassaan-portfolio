@@ -3,10 +3,10 @@ import Reveal from './Reveal';
 import './About.css';
 
 const highlights = [
-  { icon: 'fas fa-rocket', text: 'Apps published & maintained on the Apple App Store' },
+  { icon: 'fas fa-rocket', text: 'Full-stack products shipped with auth, dashboards, and workflows' },
   { icon: 'fas fa-object-group', text: 'Figma → pixel-perfect, responsive production UI' },
-  { icon: 'fas fa-diagram-project', text: 'Clean state layers with GetX and BLoC' },
-  { icon: 'fas fa-plug', text: 'REST API integration and real-time data sync' },
+  { icon: 'fas fa-diagram-project', text: 'Clean state and data layers across web and mobile' },
+  { icon: 'fas fa-plug', text: 'REST API integration, RLS, and real-time data sync' },
 ];
 
 export default function About() {
@@ -15,7 +15,7 @@ export default function About() {
       <div className="container">
         <Reveal className="section-head">
           <span className="eyebrow">About me</span>
-          <h2>A developer who ships, not just prototypes.</h2>
+          <h2>A developer who ships full-stack products, not just prototypes.</h2>
         </Reveal>
 
         <div className="about__grid">

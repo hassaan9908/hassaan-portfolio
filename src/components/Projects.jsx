@@ -82,6 +82,14 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+
+              {p.website && (
+                <div className="project__links">
+                  <a href={p.website} target="_blank" rel="noreferrer" className="project__link">
+                    View live <i className="fas fa-arrow-up-right-from-square" />
+                  </a>
+                </div>
+              )}
             </article>
           ))}
         </div>

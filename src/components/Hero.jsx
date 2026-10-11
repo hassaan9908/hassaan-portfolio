@@ -103,18 +103,18 @@ export default function Hero() {
             <img src={portrait} alt={profile.name} className="hero__portrait" />
 
             <div className="hero__badge hero__badge--top">
-              <i className="fab fa-flutter" />
+              <i className="fas fa-code" />
               <div>
-                <strong>Flutter</strong>
-                <span>Production apps</span>
+                <strong>MERN + Next.js + TS</strong>
+                <span>Production web apps</span>
               </div>
             </div>
 
             <div className="hero__badge hero__badge--bottom">
-              <i className="fab fa-react" />
+              <i className="fas fa-database" />
               <div>
-                <strong>MERN Stack</strong>
-                <span>Production web apps</span>
+                <strong>Flutter + Firebase</strong>
+                <span>Mobile Apps</span>
               </div>
             </div>
           </div>
